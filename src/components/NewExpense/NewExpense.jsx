@@ -2,10 +2,13 @@ import ExpenseForm from './ExpenseForm';
 
 import './NewExpense.css';
 
-const NewExpense = () => {
+const NewExpense = (props) => {
+    const { addExpense } = props;
     return (
         <div className="new-expense">
-            <ExpenseForm />
+            <ExpenseForm
+                addExpense={addExpense}
+            />
         </div>
     );
 };
