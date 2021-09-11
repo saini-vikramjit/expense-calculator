@@ -30,7 +30,7 @@ const ExpenseForm = (props) => {
         setFormInput((prevState) => {
             return {
                 ...prevState,
-                date: new Date(e.target.value),
+                date: e.target.value,
             };
         });
     };
@@ -38,8 +38,9 @@ const ExpenseForm = (props) => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         const newExpense = {
-            id: Math.random(99).toString(),
             ...formInput,
+            id: Math.random(99).toString(),
+            date: new Date(formInput.date),
         };
         props.addExpense(newExpense);
         setFormInput({

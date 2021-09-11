@@ -36,8 +36,8 @@ const App = () => {
     const addExpense = (expense) => {
         setExpenses((prevState) => {
             return [
-                ...prevState,
                 expense,
+                ...prevState,
             ]
         });
     }
